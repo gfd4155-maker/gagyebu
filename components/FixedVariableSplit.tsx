@@ -12,7 +12,7 @@ export default function FixedVariableSplit({ current }: FixedVariableSplitProps)
   const fixedPct = total === 0 ? 0 : (fixed / total) * 100;
 
   return (
-    <div className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-black/5 sm:p-6">
+    <div className="rounded-2xl bg-white p-4 shadow-[0_4px_20px_rgba(30,41,59,0.05)] sm:p-6">
       <h3 className="text-base font-semibold text-slate-800">고정비 vs 변동비</h3>
 
       {total === 0 ? (

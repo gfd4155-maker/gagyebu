@@ -20,7 +20,7 @@ export default function MonthSelector({
   const months = Array.from({ length: 12 }, (_, i) => i + 1);
 
   return (
-    <div className="flex items-center justify-center gap-2 rounded-2xl bg-white p-2 shadow-sm ring-1 ring-black/5 sm:justify-start">
+    <div className="flex items-center justify-center gap-2 rounded-2xl bg-white p-2 shadow-[0_4px_20px_rgba(30,41,59,0.05)] sm:justify-start">
       <button
         type="button"
         onClick={onPrev}
@@ -34,7 +34,7 @@ export default function MonthSelector({
         value={value.year}
         onChange={(e) => onChange({ ...value, year: Number(e.target.value) })}
         aria-label="연도 선택"
-        className="rounded-lg border border-slate-200 px-2 py-1.5 text-sm font-medium focus:border-blue-500 focus:outline-none"
+        className="rounded-lg border border-slate-200 px-2 py-1.5 text-sm font-medium focus:border-[#091426] focus:outline-none focus:ring-2 focus:ring-[#091426]/15"
       >
         {years.map((y) => (
           <option key={y} value={y}>
@@ -47,7 +47,7 @@ export default function MonthSelector({
         value={value.month}
         onChange={(e) => onChange({ ...value, month: Number(e.target.value) })}
         aria-label="월 선택"
-        className="rounded-lg border border-slate-200 px-2 py-1.5 text-sm font-medium focus:border-blue-500 focus:outline-none"
+        className="rounded-lg border border-slate-200 px-2 py-1.5 text-sm font-medium focus:border-[#091426] focus:outline-none focus:ring-2 focus:ring-[#091426]/15"
       >
         {months.map((m) => (
           <option key={m} value={m}>

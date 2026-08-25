@@ -59,79 +59,94 @@ export default function Home() {
     : `${selected.year}-${String(selected.month).padStart(2, "0")}-01`;
 
   return (
-    <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-6 px-4 py-8 sm:px-6">
-      <header>
-        <h1 className="text-2xl font-bold text-slate-900">가계부</h1>
-        <p className="mt-1 text-sm text-slate-500">
-          수입과 지출을 기록하고 월별 소비 흐름을 한눈에 확인하세요.
-        </p>
-      </header>
-
+    <div className="flex min-h-screen w-full bg-[#f8f9ff]">
       <Tabs active={tab} onChange={setTab} />
 
-      <MonthSelector
-        value={selected}
-        onChange={setSelected}
-        onPrev={() => setSelected((prev) => prevMonth(prev))}
-        onNext={() => setSelected((prev) => nextMonth(prev))}
-      />
+      <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-6 px-4 py-8 pb-28 sm:px-6 md:max-w-4xl md:pb-8">
+        <header className="md:hidden">
+          <h1 className="font-display text-2xl font-bold text-[#0b1c30]">가계부</h1>
+          <p className="mt-1 text-sm text-[#45474c]">
+            수입과 지출을 기록하고 월별 소비 흐름을 한눈에 확인하세요.
+          </p>
+        </header>
 
-      {tab === "write" && (
-        <>
-          <TransactionForm
-            key={monthKey(selected)}
-            defaultDate={defaultDate}
-            onAdd={addTransaction}
-          />
+        <header className="hidden md:block">
+          <h2 className="font-display text-3xl font-bold tracking-tight text-[#0b1c30]">
+            {tab === "write" ? "가계부 작성" : tab === "summary" ? "Summary" : "반복 항목"}
+          </h2>
+          <p className="mt-1 text-sm text-[#45474c]">
+            수입과 지출을 기록하고 월별 소비 흐름을 한눈에 확인하세요.
+          </p>
+        </header>
 
-          <section className="flex flex-col gap-3">
-            <h2 className="text-lg font-semibold text-slate-800">내역</h2>
-            {loaded && (
-              <TransactionList
-                transactions={currentMonthTx}
-                onRemove={removeTransaction}
-              />
-            )}
-          </section>
-        </>
-      )}
-
-      {tab === "summary" && (
-        <div className="flex flex-col gap-4">
-          <SummaryCards
-            totalIncome={totalIncome}
-            totalExpense={totalExpense}
-            previousExpense={previousExpense}
-          />
-
-          <BudgetProgress
-            current={currentMonthTx}
-            totalExpense={totalExpense}
-            budget={budget}
-            onSetTotalBudget={setTotalBudget}
-            onSetCategoryBudget={setCategoryBudget}
-          />
-
-          <FixedVariableSplit current={currentMonthTx} />
-
-          <CategoryBreakdown current={currentMonthTx} previous={previousMonthTx} />
-
-          <TrendSection manualTransactions={transactions} rules={rules} selected={selected} />
-
-          <Insights insights={insights} />
-        </div>
-      )}
-
-      {tab === "recurring" && (
-        <RecurringManager
-          rules={rules}
-          selected={selected}
-          onAdd={addRule}
-          onChangeAmount={changeAmount}
-          onSetStatus={setStatus}
-          onRemove={removeRule}
+        <MonthSelector
+          value={selected}
+          onChange={setSelected}
+          onPrev={() => setSelected((prev) => prevMonth(prev))}
+          onNext={() => setSelected((prev) => nextMonth(prev))}
         />
-      )}
+
+        {tab === "write" && (
+          <>
+            <TransactionForm
+              key={monthKey(selected)}
+              defaultDate={defaultDate}
+              onAdd={addTransaction}
+            />
+
+            <section className="flex flex-col gap-3">
+              <h2 className="text-lg font-semibold text-[#0b1c30]">내역</h2>
+              {loaded && (
+                <TransactionList
+                  transactions={currentMonthTx}
+                  onRemove={removeTransaction}
+                />
+              )}
+            </section>
+          </>
+        )}
+
+        {tab === "summary" && (
+          <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:items-start md:gap-4">
+            <div className="md:col-span-2">
+              <SummaryCards
+                totalIncome={totalIncome}
+                totalExpense={totalExpense}
+                previousExpense={previousExpense}
+              />
+            </div>
+
+            <BudgetProgress
+              current={currentMonthTx}
+              totalExpense={totalExpense}
+              budget={budget}
+              onSetTotalBudget={setTotalBudget}
+              onSetCategoryBudget={setCategoryBudget}
+            />
+
+            <FixedVariableSplit current={currentMonthTx} />
+
+            <CategoryBreakdown current={currentMonthTx} previous={previousMonthTx} />
+
+            <Insights insights={insights} />
+
+            <div className="md:col-span-2">
+              <TrendSection manualTransactions={transactions} rules={rules} selected={selected} />
+            </div>
+          </div>
+        )}
+
+        {tab === "recurring" && (
+          <RecurringManager
+            rules={rules}
+            selected={selected}
+            onAdd={addRule}
+            onChangeAmount={changeAmount}
+            onSetStatus={setStatus}
+            onRemove={removeRule}
+          />
+        )}
+      </div>
     </div>
   );
 }

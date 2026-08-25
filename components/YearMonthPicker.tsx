@@ -28,7 +28,7 @@ export default function YearMonthPicker({
         value={value.year}
         onChange={(e) => onChange({ ...value, year: Number(e.target.value) })}
         aria-label="연도 선택"
-        className="rounded-lg border border-slate-200 px-2 py-1 text-sm focus:border-blue-500 focus:outline-none"
+        className="rounded-lg border border-slate-200 px-2 py-1 text-sm focus:border-[#091426] focus:outline-none focus:ring-2 focus:ring-[#091426]/15"
       >
         {years.map((y) => (
           <option key={y} value={y}>
@@ -40,7 +40,7 @@ export default function YearMonthPicker({
         value={value.month}
         onChange={(e) => onChange({ ...value, month: Number(e.target.value) })}
         aria-label="월 선택"
-        className="rounded-lg border border-slate-200 px-2 py-1 text-sm focus:border-blue-500 focus:outline-none"
+        className="rounded-lg border border-slate-200 px-2 py-1 text-sm focus:border-[#091426] focus:outline-none focus:ring-2 focus:ring-[#091426]/15"
       >
         {months.map((m) => (
           <option key={m} value={m}>

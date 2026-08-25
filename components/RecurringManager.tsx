@@ -37,7 +37,7 @@ const STATUS_LABEL: Record<RuleStatus, string> = {
 };
 
 const STATUS_STYLE: Record<RuleStatus, string> = {
-  active: "bg-blue-50 text-blue-600",
+  active: "bg-[#006a61]/10 text-[#006a61]",
   paused: "bg-amber-50 text-amber-600",
   ended: "bg-slate-100 text-slate-500",
 };
@@ -56,7 +56,7 @@ export default function RecurringManager({
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-black/5 sm:p-6">
+      <div className="rounded-2xl bg-white p-4 shadow-[0_4px_20px_rgba(30,41,59,0.05)] sm:p-6">
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-lg font-semibold text-slate-800">반복 항목</h2>
@@ -67,7 +67,7 @@ export default function RecurringManager({
           <button
             type="button"
             onClick={() => setShowCreate((v) => !v)}
-            className="shrink-0 rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-slate-700"
+            className="shrink-0 rounded-xl bg-[#091426] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#1e293b]"
           >
             {showCreate ? "닫기" : "+ 추가"}
           </button>
@@ -120,7 +120,7 @@ function RuleGroup({
   onRemove: RecurringManagerProps["onRemove"];
 }) {
   return (
-    <div className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-black/5 sm:p-6">
+    <div className="rounded-2xl bg-white p-4 shadow-[0_4px_20px_rgba(30,41,59,0.05)] sm:p-6">
       <h3 className="text-base font-semibold text-slate-800">{title}</h3>
       {rules.length === 0 ? (
         <p className="mt-3 text-sm text-slate-400">등록된 항목이 없어요.</p>
@@ -174,7 +174,7 @@ function RuleRow({
           </p>
         </div>
         <span
-          className={`text-base font-bold ${rule.type === "income" ? "text-blue-600" : "text-red-600"}`}
+          className={`text-base font-display font-bold tabular-nums ${rule.type === "income" ? "text-[#006a61]" : "text-[#ff4e67]"}`}
         >
           {amount === null ? "—" : formatCurrency(amount)}
         </span>
@@ -210,7 +210,7 @@ function RuleRow({
           <button
             type="button"
             onClick={() => setMode(mode === "resume" ? "none" : "resume")}
-            className="rounded-full bg-blue-50 px-2.5 py-1 font-medium text-blue-600 hover:bg-blue-100"
+            className="rounded-full bg-[#006a61]/10 px-2.5 py-1 font-medium text-[#006a61] hover:bg-[#006a61]/20"
           >
             다시 활성화
           </button>
@@ -222,7 +222,7 @@ function RuleRow({
               onRemove(rule.id);
             }
           }}
-          className="rounded-full px-2.5 py-1 font-medium text-slate-400 hover:bg-red-50 hover:text-red-500"
+          className="rounded-full px-2.5 py-1 font-medium text-slate-400 hover:bg-[#ff4e67]/10 hover:text-[#ff4e67]"
         >
           삭제
         </button>
@@ -307,7 +307,7 @@ function AmountChangeForm({
             min={0}
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            className="w-32 rounded-lg border border-slate-200 px-2 py-1 text-right focus:border-blue-500 focus:outline-none"
+            className="w-32 rounded-lg border border-slate-200 px-2 py-1 text-right focus:border-[#091426] focus:outline-none focus:ring-2 focus:ring-[#091426]/15"
           />
           원
         </label>
@@ -328,7 +328,7 @@ function AmountChangeForm({
             if (!amount || Number.isNaN(parsed) || parsed <= 0) return;
             onConfirm(parsed, effectiveFrom);
           }}
-          className="rounded-lg bg-slate-900 px-3 py-1.5 text-xs font-semibold text-white hover:bg-slate-700"
+          className="rounded-lg bg-[#091426] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#1e293b]"
         >
           변경 적용
         </button>
@@ -372,7 +372,7 @@ function StatusChangeForm({
         <button
           type="button"
           onClick={() => onConfirm(ym)}
-          className="rounded-lg bg-slate-900 px-3 py-1.5 text-xs font-semibold text-white hover:bg-slate-700"
+          className="rounded-lg bg-[#091426] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#1e293b]"
         >
           {confirmLabel}
         </button>
@@ -438,7 +438,7 @@ function CreateForm({
           type="button"
           onClick={() => handleTypeChange("income")}
           className={`rounded-lg py-1.5 text-sm font-semibold transition-colors ${
-            type === "income" ? "bg-blue-600 text-white" : "bg-white text-slate-500"
+            type === "income" ? "bg-[#006a61] text-white" : "bg-white text-slate-500"
           }`}
         >
           반복 수입
@@ -447,7 +447,7 @@ function CreateForm({
           type="button"
           onClick={() => handleTypeChange("expense")}
           className={`rounded-lg py-1.5 text-sm font-semibold transition-colors ${
-            type === "expense" ? "bg-red-600 text-white" : "bg-white text-slate-500"
+            type === "expense" ? "bg-[#ff4e67] text-white" : "bg-white text-slate-500"
           }`}
         >
           반복 지출
@@ -462,7 +462,7 @@ function CreateForm({
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="예: 월급, 넷플릭스"
-            className="rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
+            className="rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-[#091426] focus:outline-none focus:ring-2 focus:ring-[#091426]/15"
           />
         </label>
 
@@ -474,7 +474,7 @@ function CreateForm({
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
             placeholder="0"
-            className="rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
+            className="rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-[#091426] focus:outline-none focus:ring-2 focus:ring-[#091426]/15"
           />
         </label>
 
@@ -483,7 +483,7 @@ function CreateForm({
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value as Category)}
-            className="rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
+            className="rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-[#091426] focus:outline-none focus:ring-2 focus:ring-[#091426]/15"
           >
             {categories.map((c) => (
               <option key={c} value={c}>
@@ -498,7 +498,7 @@ function CreateForm({
           <select
             value={dayOfMonth}
             onChange={(e) => setDayOfMonth(Number(e.target.value))}
-            className="rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
+            className="rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-[#091426] focus:outline-none focus:ring-2 focus:ring-[#091426]/15"
           >
             {Array.from({ length: 28 }, (_, i) => i + 1).map((d) => (
               <option key={d} value={d}>
@@ -514,11 +514,11 @@ function CreateForm({
         </label>
       </div>
 
-      {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
+      {error && <p className="mt-2 text-sm text-[#ff4e67]">{error}</p>}
 
       <button
         type="submit"
-        className="mt-3 w-full rounded-xl bg-slate-900 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-slate-700"
+        className="mt-3 w-full rounded-xl bg-[#091426] py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#1e293b]"
       >
         반복 항목 등록
       </button>

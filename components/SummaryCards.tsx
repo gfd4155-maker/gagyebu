@@ -18,15 +18,15 @@ export default function SummaryCards({
 
   return (
     <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-      <div className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-black/5">
+      <div className="rounded-2xl bg-white p-4 shadow-[0_4px_20px_rgba(30,41,59,0.05)]">
         <p className="text-sm text-slate-500">총수입</p>
-        <p className="mt-1 text-2xl font-bold text-blue-600">
+        <p className="mt-1 text-2xl font-display font-bold tabular-nums text-[#006a61]">
           {formatCurrency(totalIncome)}
         </p>
       </div>
-      <div className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-black/5">
+      <div className="rounded-2xl bg-white p-4 shadow-[0_4px_20px_rgba(30,41,59,0.05)]">
         <p className="text-sm text-slate-500">총지출</p>
-        <p className="mt-1 text-2xl font-bold text-red-600">
+        <p className="mt-1 text-2xl font-display font-bold tabular-nums text-[#ff4e67]">
           {formatCurrency(totalExpense)}
         </p>
         <p className="mt-1 text-xs text-slate-400">
@@ -36,7 +36,7 @@ export default function SummaryCards({
             <>
               지난달 대비{" "}
               <span
-                className={expenseChange >= 0 ? "text-red-600" : "text-blue-600"}
+                className={expenseChange >= 0 ? "text-[#ff4e67]" : "text-[#006a61]"}
               >
                 {expenseChange >= 0 ? "▲" : "▼"}{" "}
                 {Math.abs(expenseChange).toFixed(1)}%
@@ -45,19 +45,19 @@ export default function SummaryCards({
           )}
         </p>
       </div>
-      <div className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-black/5">
+      <div className="rounded-2xl bg-white p-4 shadow-[0_4px_20px_rgba(30,41,59,0.05)]">
         <p className="text-sm text-slate-500">잔액</p>
         <p
-          className={`mt-1 text-2xl font-bold ${
-            balance >= 0 ? "text-slate-900" : "text-red-600"
+          className={`mt-1 text-2xl font-display font-bold tabular-nums ${
+            balance >= 0 ? "text-slate-900" : "text-[#ff4e67]"
           }`}
         >
           {formatCurrency(balance)}
         </p>
       </div>
-      <div className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-black/5">
+      <div className="rounded-2xl bg-white p-4 shadow-[0_4px_20px_rgba(30,41,59,0.05)]">
         <p className="text-sm text-slate-500">저축률</p>
-        <p className="mt-1 text-2xl font-bold text-slate-900">
+        <p className="mt-1 text-2xl font-display font-bold tabular-nums text-slate-900">
           {rate === null ? "—" : `${rate.toFixed(1)}%`}
         </p>
       </div>

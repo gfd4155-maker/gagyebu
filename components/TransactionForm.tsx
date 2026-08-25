@@ -62,7 +62,7 @@ export default function TransactionForm({ onAdd, defaultDate }: TransactionFormP
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-black/5 sm:p-6"
+      className="rounded-2xl bg-white p-4 shadow-[0_4px_20px_rgba(30,41,59,0.05)] sm:p-6"
     >
       <div className="mb-4 grid grid-cols-2 gap-2">
         <button
@@ -70,7 +70,7 @@ export default function TransactionForm({ onAdd, defaultDate }: TransactionFormP
           onClick={() => handleTypeChange("income")}
           className={`rounded-xl py-2 text-sm font-semibold transition-colors ${
             type === "income"
-              ? "bg-blue-600 text-white"
+              ? "bg-[#006a61] text-white"
               : "bg-slate-100 text-slate-500 hover:bg-slate-200"
           }`}
         >
@@ -81,7 +81,7 @@ export default function TransactionForm({ onAdd, defaultDate }: TransactionFormP
           onClick={() => handleTypeChange("expense")}
           className={`rounded-xl py-2 text-sm font-semibold transition-colors ${
             type === "expense"
-              ? "bg-red-600 text-white"
+              ? "bg-[#ff4e67] text-white"
               : "bg-slate-100 text-slate-500 hover:bg-slate-200"
           }`}
         >
@@ -99,7 +99,7 @@ export default function TransactionForm({ onAdd, defaultDate }: TransactionFormP
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
-            className="rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
+            className="rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-[#091426] focus:outline-none focus:ring-2 focus:ring-[#091426]/15"
           />
         </div>
 
@@ -115,7 +115,7 @@ export default function TransactionForm({ onAdd, defaultDate }: TransactionFormP
             placeholder="0"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            className="rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
+            className="rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-[#091426] focus:outline-none focus:ring-2 focus:ring-[#091426]/15"
           />
         </div>
 
@@ -130,7 +130,7 @@ export default function TransactionForm({ onAdd, defaultDate }: TransactionFormP
             id="category"
             value={category}
             onChange={(e) => setCategory(e.target.value as Category)}
-            className="rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
+            className="rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-[#091426] focus:outline-none focus:ring-2 focus:ring-[#091426]/15"
           >
             {categories.map((c) => (
               <option key={c} value={c}>
@@ -150,7 +150,7 @@ export default function TransactionForm({ onAdd, defaultDate }: TransactionFormP
             placeholder="메모 (선택)"
             value={memo}
             onChange={(e) => setMemo(e.target.value)}
-            className="rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
+            className="rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-[#091426] focus:outline-none focus:ring-2 focus:ring-[#091426]/15"
           />
         </div>
 
@@ -185,11 +185,11 @@ export default function TransactionForm({ onAdd, defaultDate }: TransactionFormP
         )}
       </div>
 
-      {error && <p className="mt-3 text-sm text-red-600">{error}</p>}
+      {error && <p className="mt-3 text-sm text-[#ff4e67]">{error}</p>}
 
       <button
         type="submit"
-        className="mt-4 w-full rounded-xl bg-slate-900 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-slate-700"
+        className="mt-4 w-full rounded-xl bg-[#091426] py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#1e293b]"
       >
         추가하기
       </button>

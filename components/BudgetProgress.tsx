@@ -14,9 +14,9 @@ interface BudgetProgressProps {
 }
 
 function barColor(pct: number) {
-  if (pct >= 100) return "bg-red-500";
+  if (pct >= 100) return "bg-[#ff4e67]";
   if (pct >= 80) return "bg-amber-500";
-  return "bg-blue-500";
+  return "bg-[#006a61]";
 }
 
 export default function BudgetProgress({
@@ -33,7 +33,7 @@ export default function BudgetProgress({
   const totalPct = budget.total ? Math.round((totalExpense / budget.total) * 100) : null;
 
   return (
-    <div className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-black/5 sm:p-6">
+    <div className="rounded-2xl bg-white p-4 shadow-[0_4px_20px_rgba(30,41,59,0.05)] sm:p-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h3 className="text-base font-semibold text-slate-800">월 예산</h3>
         <label className="flex items-center gap-2 text-xs text-slate-500">
@@ -46,7 +46,7 @@ export default function BudgetProgress({
             onChange={(e) =>
               onSetTotalBudget(e.target.value === "" ? null : Number(e.target.value))
             }
-            className="w-28 rounded-lg border border-slate-200 px-2 py-1 text-right text-sm focus:border-blue-500 focus:outline-none"
+            className="w-28 rounded-lg border border-slate-200 px-2 py-1 text-right text-sm focus:border-[#091426] focus:outline-none focus:ring-2 focus:ring-[#091426]/15"
           />
           원
         </label>
@@ -61,7 +61,7 @@ export default function BudgetProgress({
             <span
               className={`font-semibold ${
                 (totalPct ?? 0) >= 100
-                  ? "text-red-600"
+                  ? "text-[#ff4e67]"
                   : (totalPct ?? 0) >= 80
                     ? "text-amber-600"
                     : "text-slate-700"
@@ -116,7 +116,7 @@ export default function BudgetProgress({
                           e.target.value === "" ? null : Number(e.target.value)
                         )
                       }
-                      className="w-24 rounded-lg border border-slate-200 px-2 py-1 text-right text-sm focus:border-blue-500 focus:outline-none"
+                      className="w-24 rounded-lg border border-slate-200 px-2 py-1 text-right text-sm focus:border-[#091426] focus:outline-none focus:ring-2 focus:ring-[#091426]/15"
                     />
                     원
                   </label>

@@ -12,7 +12,7 @@ export default function TransactionList({
 }: TransactionListProps) {
   if (transactions.length === 0) {
     return (
-      <div className="rounded-2xl bg-white p-8 text-center text-sm text-slate-400 shadow-sm ring-1 ring-black/5">
+      <div className="rounded-2xl bg-white p-8 text-center text-sm text-slate-400 shadow-[0_4px_20px_rgba(30,41,59,0.05)]">
         이 달에 등록된 내역이 없어요. 위에서 내역을 추가해보세요.
       </div>
     );
@@ -27,14 +27,14 @@ export default function TransactionList({
       {sorted.map((t) => (
         <li
           key={t.id}
-          className="flex items-center justify-between gap-3 rounded-2xl bg-white p-4 shadow-sm ring-1 ring-black/5"
+          className="flex items-center justify-between gap-3 rounded-2xl bg-white p-4 shadow-[0_4px_20px_rgba(30,41,59,0.05)]"
         >
           <div className="flex min-w-0 items-center gap-3">
             <span
               className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold ${
                 t.type === "income"
-                  ? "bg-blue-50 text-blue-600"
-                  : "bg-red-50 text-red-600"
+                  ? "bg-[#006a61]/10 text-[#006a61]"
+                  : "bg-[#ff4e67]/10 text-[#ff4e67]"
               }`}
             >
               {t.category}
@@ -64,8 +64,8 @@ export default function TransactionList({
 
           <div className="flex shrink-0 items-center gap-3">
             <span
-              className={`text-base font-bold ${
-                t.type === "income" ? "text-blue-600" : "text-red-600"
+              className={`text-base font-display font-bold tabular-nums ${
+                t.type === "income" ? "text-[#006a61]" : "text-[#ff4e67]"
               }`}
             >
               {t.type === "income" ? "+" : "-"}

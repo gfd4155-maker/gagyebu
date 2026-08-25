@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pocket Insight - Summary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#dce9ff",
+                      "on-primary-container": "#8590a6",
+                      "primary-fixed-dim": "#bcc7de",
+                      "surface-container": "#e5eeff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-secondary-fixed": "#00201d",
+                      "on-tertiary": "#ffffff",
+                      "tertiary": "#320008",
+                      "background": "#f8f9ff",
+                      "primary-container": "#1e293b",
+                      "surface-dim": "#cbdbf5",
+                      "surface-bright": "#f8f9ff",
+                      "on-secondary-fixed-variant": "#005049",
+                      "on-secondary": "#ffffff",
+                      "surface-variant": "#d3e4fe",
+                      "on-surface": "#0b1c30",
+                      "primary": "#091426",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-container": "#006f66",
+                      "outline": "#75777d",
+                      "surface-tint": "#545f73",
+                      "tertiary-container": "#590015",
+                      "on-primary-fixed": "#111c2d",
+                      "surface": "#f8f9ff",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-container": "#ff4e67",
+                      "on-error-container": "#93000a",
+                      "secondary-container": "#86f2e4",
+                      "tertiary-fixed": "#ffdada",
+                      "outline-variant": "#c5c6cd",
+                      "on-error": "#ffffff",
+                      "surface-container-low": "#eff4ff",
+                      "on-tertiary-fixed-variant": "#920028",
+                      "secondary-fixed-dim": "#6bd8cb",
+                      "inverse-primary": "#bcc7de",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed": "#40000c",
+                      "inverse-surface": "#213145",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed": "#89f5e7",
+                      "secondary": "#006a61",
+                      "on-primary-fixed-variant": "#3c475a",
+                      "surface-container-highest": "#d3e4fe",
+                      "tertiary-fixed-dim": "#ffb3b6",
+                      "on-surface-variant": "#45474c",
+                      "primary-fixed": "#d8e3fb",
+                      "on-background": "#0b1c30"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "dashboard-max-width": "1280px",
+                      "stack-md": "16px",
+                      "stack-sm": "8px",
+                      "base": "4px",
+                      "stack-lg": "32px",
+                      "gutter": "24px",
+                      "container-max-width": "768px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "numeric-data": [
+                              "Geist"
+                      ],
+                      "headline-lg-mobile": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "display-balance": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "numeric-data": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-balance": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        /* Base typography defaults */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        .font-geist { font-family: 'Geist', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background flex h-screen overflow-hidden antialiased">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col h-full border-r border-outline-variant bg-surface-container-low dark:bg-surface-container-low docked left-0 h-full w-64 shadow-sm shrink-0">
+<div class="p-6">
+<h1 class="text-headline-md font-headline-md font-bold text-primary dark:text-primary">Pocket Insight</h1>
+<p class="text-label-caps font-label-caps text-on-surface-variant mt-1">Financial Clarity</p>
+</div>
+<div class="flex flex-col gap-2 mt-4 px-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">edit_note</span>
+<span class="text-body-md font-body-md">Transactions</span>
+</a>
+<a class="flex items-center gap-3 text-primary font-bold border-r-4 border-primary bg-surface-container-high px-4 py-3 rounded-lg opacity-80 transition-opacity duration-150 translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">pie_chart</span>
+<span class="text-body-md font-body-md">Summary</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">event_repeat</span>
+<span class="text-body-md font-body-md">Recurring</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col h-full overflow-hidden relative">
+<!-- TopAppBar (Mobile & Desktop Header) -->
+<header class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-dashboard-max-width mx-auto bg-surface dark:bg-surface shadow-sm docked full-width top-0 z-10 shrink-0 h-16 md:hidden">
+<div class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim">Pocket Insight</div>
+<div class="flex items-center gap-4 text-primary dark:text-primary-fixed-dim">
+<button class="hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">calendar_month</span>
+</button>
+<button class="hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</header>
+<!-- Main Scrollable Canvas -->
+<main class="flex-1 overflow-y-auto w-full max-w-dashboard-max-width mx-auto px-margin-mobile md:px-gutter py-stack-md md:py-stack-lg pb-24 md:pb-stack-lg">
+<!-- Desktop Header Equivalent -->
+<div class="hidden md:flex justify-between items-end mb-stack-lg">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Summary</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Your financial overview for October</p>
+</div>
+<div class="flex items-center gap-4 text-primary">
+<button class="hover:bg-surface-container-low transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">calendar_month</span>
+</button>
+<button class="hover:bg-surface-container-low transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-stack-lg">
+<!-- Left Column (Core Info) -->
+<div class="lg:col-span-5 flex flex-col gap-stack-md">
+<!-- Balance Card -->
+<div class="bg-surface-container-lowest rounded-xl p-stack-md md:p-gutter shadow-[0px_4px_20px_rgba(30,41,59,0.05)] border border-slate-200">
+<h3 class="text-body-md font-body-md text-on-surface-variant mb-2">이번 달 남은 금액</h3>
+<div class="text-display-balance font-display-balance text-on-surface mb-6">₩1,245,000</div>
+<div class="flex justify-between items-center mb-4">
+<div>
+<p class="text-label-caps font-label-caps text-on-surface-variant mb-1 uppercase">Income</p>
+<p class="text-headline-md font-headline-md text-secondary">₩3,200,000</p>
+</div>
+<div class="h-8 w-px bg-slate-200 mx-4"></div>
+<div class="text-right">
+<p class="text-label-caps font-label-caps text-on-surface-variant mb-1 uppercase">Expense</p>
+<p class="text-headline-md font-headline-md text-error">₩1,955,000</p>
+</div>
+</div>
+<!-- Budget Progress -->
+<div class="mt-6 pt-6 border-t border-slate-200">
+<div class="flex justify-between text-body-sm font-body-md mb-2">
+<span class="text-on-surface font-medium">Monthly Budget</span>
+<span class="text-on-surface-variant font-numeric-data">62%</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-2.5 mb-2 overflow-hidden">
+<div class="bg-primary h-2.5 rounded-full" style="width: 62%"></div>
+</div>
+<div class="flex justify-between text-label-caps font-label-caps text-on-surface-variant">
+<span>₩1,240,000 / ₩2,000,000</span>
+<span class="text-secondary font-medium">760,000원 남음</span>
+</div>
+</div>
+</div>
+<!-- Insights Cards -->
+<div class="grid grid-cols-1 gap-stack-md mt-2">
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-[0px_4px_20px_rgba(30,41,59,0.05)] border border-slate-200 flex items-start gap-4">
+<div class="bg-secondary-container text-on-secondary-container p-2 rounded-full flex shrink-0">
+<span class="material-symbols-outlined text-sm">trending_down</span>
+</div>
+<div>
+<h4 class="text-body-md font-body-md font-medium text-on-surface">Great job on savings!</h4>
+<p class="text-body-sm font-body-md text-on-surface-variant mt-1">지난달보다 ₩124,000 덜 사용했어요.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-[0px_4px_20px_rgba(30,41,59,0.05)] border border-slate-200 flex items-start gap-4">
+<div class="bg-tertiary-fixed text-on-tertiary-fixed p-2 rounded-full flex shrink-0">
+<span class="material-symbols-outlined text-sm">restaurant</span>
+</div>
+<div>
+<h4 class="text-body-md font-body-md font-medium text-on-surface">Dining out increased</h4>
+<p class="text-body-sm font-body-md text-on-surface-variant mt-1">외식비가 예산의 40%를 차지하고 있습니다.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (Data Vis) -->
+<div class="lg:col-span-7 flex flex-col gap-stack-md">
+<!-- Spending Trend -->
+<div class="bg-surface-container-lowest rounded-xl p-stack-md md:p-gutter shadow-[0px_4px_20px_rgba(30,41,59,0.05)] border border-slate-200 h-64 flex flex-col">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-4">6-Month Trend</h3>
+<div class="flex-1 w-full bg-slate-50 rounded-lg border border-slate-100 flex items-end justify-between p-4 gap-2">
+<!-- Placeholder for line chart -->
+<div class="w-1/6 flex flex-col items-center justify-end h-full">
+<div class="w-full bg-primary-fixed-dim rounded-t-sm" style="height: 40%"></div>
+<span class="text-[10px] text-on-surface-variant mt-2">May</span>
+</div>
+<div class="w-1/6 flex flex-col items-center justify-end h-full">
+<div class="w-full bg-primary-fixed-dim rounded-t-sm" style="height: 55%"></div>
+<span class="text-[10px] text-on-surface-variant mt-2">Jun</span>
+</div>
+<div class="w-1/6 flex flex-col items-center justify-end h-full">
+<div class="w-full bg-primary-fixed-dim rounded-t-sm" style="height: 35%"></div>
+<span class="text-[10px] text-on-surface-variant mt-2">Jul</span>
+</div>
+<div class="w-1/6 flex flex-col items-center justify-end h-full">
+<div class="w-full bg-primary-fixed-dim rounded-t-sm" style="height: 70%"></div>
+<span class="text-[10px] text-on-surface-variant mt-2">Aug</span>
+</div>
+<div class="w-1/6 flex flex-col items-center justify-end h-full">
+<div class="w-full bg-primary-fixed-dim rounded-t-sm" style="height: 45%"></div>
+<span class="text-[10px] text-on-surface-variant mt-2">Sep</span>
+</div>
+<div class="w-1/6 flex flex-col items-center justify-end h-full">
+<div class="w-full bg-primary rounded-t-sm" style="height: 60%"></div>
+<span class="text-[10px] text-primary font-bold mt-2">Oct</span>
+</div>
+</div>
+</div>
+<!-- Category Breakdown -->
+<div class="bg-surface-container-lowest rounded-xl p-stack-md md:p-gutter shadow-[0px_4px_20px_rgba(30,41,59,0.05)] border border-slate-200">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-headline-md font-headline-md text-on-surface">Top Categories</h3>
+<button class="text-label-caps font-label-caps text-primary hover:underline">View All</button>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Category Item -->
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-sm">shopping_bag</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-body-md font-body-md font-medium text-on-surface">Shopping</span>
+<span class="text-numeric-data font-numeric-data text-on-surface">₩450,000</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full" style="width: 35%"></div>
+</div>
+</div>
+</div>
+<!-- Category Item -->
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container text-sm">restaurant</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-body-md font-body-md font-medium text-on-surface">Food &amp; Dining</span>
+<span class="text-numeric-data font-numeric-data text-on-surface">₩320,000</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 25%"></div>
+</div>
+</div>
+</div>
+<!-- Category Item -->
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-tertiary-fixed text-sm">directions_car</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between mb-1">
+<span class="text-body-md font-body-md font-medium text-on-surface">Transportation</span>
+<span class="text-numeric-data font-numeric-data text-on-surface">₩180,000</span>
+</div>
+<div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+<div class="bg-tertiary h-1.5 rounded-full" style="width: 15%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe bg-surface-container-lowest dark:bg-surface-container-lowest shadow-[0px_-4px_20px_rgba(30,41,59,0.05)] docked full-width bottom-0 rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant w-16 hover:bg-surface-container-high dark:hover:bg-surface-container-high rounded-lg p-1 transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">edit_note</span>
+<span class="text-label-caps font-label-caps">Transactions</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 w-20 scale-95 transition-transform duration-150 shadow-sm" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">pie_chart</span>
+<span class="text-label-caps font-label-caps font-bold">Summary</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant w-16 hover:bg-surface-container-high dark:hover:bg-surface-container-high rounded-lg p-1 transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">event_repeat</span>
+<span class="text-label-caps font-label-caps">Recurring</span>
+</a>
+</nav>
+</body></html>

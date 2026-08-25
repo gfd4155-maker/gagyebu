@@ -19,7 +19,7 @@ export default function CategoryBreakdown({
   const topCategory = rows[0]?.amount > 0 ? rows[0].category : null;
 
   return (
-    <div className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-black/5 sm:p-6">
+    <div className="rounded-2xl bg-white p-4 shadow-[0_4px_20px_rgba(30,41,59,0.05)] sm:p-6">
       <h3 className="text-base font-semibold text-slate-800">카테고리별 지출</h3>
 
       {total === 0 ? (
@@ -51,7 +51,7 @@ export default function CategoryBreakdown({
                       >
                         {r.category}
                         {isTop && (
-                          <span className="ml-1.5 rounded-full bg-slate-900 px-1.5 py-0.5 text-[10px] font-semibold text-white align-middle">
+                          <span className="ml-1.5 rounded-full bg-[#091426] px-1.5 py-0.5 text-[10px] font-semibold text-white align-middle">
                             최다 지출
                           </span>
                         )}
@@ -78,7 +78,7 @@ export default function CategoryBreakdown({
                     {change === null ? (
                       "비교 데이터 없음"
                     ) : (
-                      <span className={change >= 0 ? "text-red-500" : "text-blue-500"}>
+                      <span className={change >= 0 ? "text-[#ff4e67]" : "text-[#006a61]"}>
                         지난달 대비 {change >= 0 ? "▲" : "▼"}{" "}
                         {Math.abs(change).toFixed(0)}%
                       </span>

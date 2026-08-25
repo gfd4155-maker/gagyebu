@@ -61,7 +61,7 @@ export default function TrendSection({ manualTransactions, rules, selected }: Tr
   );
 
   return (
-    <div className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-black/5 sm:p-6">
+    <div className="rounded-2xl bg-white p-4 shadow-[0_4px_20px_rgba(30,41,59,0.05)] sm:p-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h3 className="text-base font-semibold text-slate-800">소비 추이</h3>
         <div className="flex gap-1 rounded-full bg-slate-100 p-1">
@@ -122,7 +122,7 @@ export default function TrendSection({ manualTransactions, rules, selected }: Tr
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value as ExpenseCategory)}
-              className="rounded-lg border border-slate-200 px-2 py-1 text-sm focus:border-blue-500 focus:outline-none"
+              className="rounded-lg border border-slate-200 px-2 py-1 text-sm focus:border-[#091426] focus:outline-none focus:ring-2 focus:ring-[#091426]/15"
             >
               {EXPENSE_CATEGORIES.map((c) => (
                 <option key={c} value={c}>
